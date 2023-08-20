@@ -1,9 +1,10 @@
 import { expect } from "@playwright/test";
 import { myTest } from "./base";
 
-myTest.afterAll(async ({ app }) => {
-  console.log("Done with tests");
-  await app.page.close();
+myTest.afterEach(async ({ app }, testInfo) => {
+  console.log(`Finished ${testInfo.title} with status ${testInfo.status}`);
+
+  app.page.close();
 });
 
 myTest("user can open main page", async ({ app }) => {
@@ -26,4 +27,5 @@ myTest("user can search products", async ({ app }) => {
   });
 
   expect(items.length).toBeGreaterThanOrEqual(16);
+  await app.page.close();
 });

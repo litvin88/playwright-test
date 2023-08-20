@@ -8,7 +8,7 @@ export class MainPage extends BasePage {
 
   async open() {
     await this.page.goto("/");
-    await this.page.waitForLoadState("load");
+    await this.page.waitForLoadState("domcontentloaded");
 
     if (await this.acceptCookies.isVisible()) {
       await this.acceptCookies.click();

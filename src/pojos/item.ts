@@ -8,16 +8,4 @@ export class Item {
     this.rating = rating;
     this.title = title;
   }
-
-  //   getPrice(): string {
-  //     return this.price;
-  //   }
-
-  //   getRating(): string {
-  //     return this.rating;
-  //   }
-
-  //   getTitle(): string {
-  //     return this.title;
-  //   }
 }
